@@ -8,6 +8,18 @@ puts "Creating users"
 
   u3 = User.create! name: 'Tom Psycs', email: 't@p.com', location: 'Fitzroy', password: 'chicken'
 
+  u4 = User.create! name: 'Aimee Wooton', email: 'e@w.com', location: 'Balaclava', password: 'chicken'
+
+  u5 = User.create! name: 'Dave Dave', email: 'd@d.com', location: 'Bowser', password: 'chicken'
+
+  u6 = User.create! name: 'Grace Grace', email: 'g@g.com', location: 'Penrose', password: 'chicken'
+
+  u7  = User.create! name: 'Sarah Sarah', email:
+  's@s.com', location: 'Mount Buffalo', password: 'chicken'
+
+  u8 = User.create! name: 'Mike Mike', email:
+  'm@m.com', location: 'Wandsworth', password: 'chicken'
+
 
 puts "Created #{User.count} users"
 
@@ -18,11 +30,46 @@ puts "Creating Drops"
 
   d1 = Drop.create! collection_date: '17/01/19',  collection_location: 'Bondi', delivery_date: '21/01/19', delivery_location: 'Penrose', owner: u1
 
-  d2 = Drop.create! collection_date: '14/01/19',  collection_location: 'Fitzroy', delivery_date: '18/01/19', delivery_location: 'Bowser', owner: u2
+  d2 = Drop.create! collection_date: '14/01/19',  collection_location: 'Fitzroy', delivery_date: '18/01/19', delivery_location: 'Bowser', owner: u4
 
 puts "Created #{Drop.count} drops"
 
-# u1.drops << d1
-# u3.drops << d2
-# #
-# puts "User #{u1.name}, has #{User.first.drops} drops"
+Product.destroy_all
+
+puts "Creating products"
+
+  p1 = Product.create! name: 'Nappies'
+  p2 = Product.create! name: 'Toilet Paper'
+  p3 = Product.create! name: 'Toothpaste'
+  p4 = Product.create! name: 'Shampoo'
+  p5 = Product.create! name: 'Tinned food'
+  p6 = Product.create! name: 'T-shirts'
+  p7 = Product.create! name: 'Body wash'
+
+puts "Created #{Product.count} proucts"
+
+LineItem.destroy_all
+
+puts "Creating Line Items"
+
+#drop 1
+  l1 = LineItem.create! drop: d1, quantity: 10
+  l2 = LineItem.create! drop: d1, quantity: 5
+  l3 = LineItem.create! drop: d1, quantity: 8
+
+  # line item 1
+  p1.line_items << l1
+  l1.update recipient: u8
+
+  # line item 2
+  p2.line_items << l2
+  l2.update donor: u4
+
+  #line item 3
+  p3.line_items << l3
+  l3.update recipient: u5
+  l3.update donor: u4
+
+
+
+puts "Line Items #{LineItem.count} created"
