@@ -1,24 +1,19 @@
-# README
+# One - Organising the Outreach
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose of the site
 
-Things you may want to cover:
+There is a big issue surrounding the Australian bushfire support. People are donating locally, to community centres and clubs. But they are struggling to handle the volume and organising where the donations are actually going. I hope to make this easier.
 
-* Ruby version
+## Aim of the site
 
-* System dependencies
+* Doners will know what products are most in demand
+* Doners will know when to buy goods
+  * When / where collections are orgainised
+  * When / where they are being delivered
+* Doners know what locations are highest in demand
+* Doners know products other people are donation so don't over buy
 
-* Configuration
+## Style
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Bright / cheerful
+* Soft around the edges
