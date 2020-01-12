@@ -1,0 +1,32 @@
+<% @products.each do | product | %>
+
+  <ul>
+    <li>
+      Type: <%= product.name %>
+      <% if product.line_items.present? %>
+        <ul>
+          <li>
+            Requested on <%= product.line_items.count %> drop(s)
+
+          </li>
+        </ul>
+
+          <% total_requested = 0 %>
+        <% product.line_items.each do | line | %>
+
+            <% total_requested += line.quantity  %>
+
+        <% end %>
+
+        <ul>
+          <li>
+            Total Requested: <%= total_requested %>
+          </li>
+        </ul>
+
+
+      <% end %>
+    </li>
+  </ul>
+
+<% end %>
