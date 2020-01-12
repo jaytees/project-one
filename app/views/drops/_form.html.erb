@@ -1,0 +1,37 @@
+<%= form_for @drop do | f | %>
+
+<% if @drop.errors.messages.any? %>
+  <p>Please correct the following errors:</p>
+  <ul>
+    <% @drop.errors.full_messages.each do | error | %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if flash[:message].present? %>
+  <p><%= flash[:message] %> <%= link_to 'Click here to view in profile', user_path(@current_user.id) %></p>
+<% end %>
+
+  <%= f.hidden_field :owner_id, :value => @current_user.id %>
+  <br>
+
+  <%= f.label :collection_location, 'Collection Location' %>
+  <%= f.text_field :collection_location %>
+  <br>
+
+  <%= f.label :collection_date, 'Collection Date' %>
+  <%= f.date_field :collection_date %>
+  <br>
+
+  <%= f.label :delivery_location %>
+  <%= f.text_field :delivery_location %>
+  <br>
+
+  <%= f.label :delivery_date %>
+  <%= f.date_field :delivery_date %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>

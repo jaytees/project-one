@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :products, :through => 'LineItem'
 
   has_secure_password
+
+  validates :email, presence: true, uniqueness: true
+  validates_presence_of :name, :location
 end

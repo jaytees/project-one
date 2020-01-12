@@ -6,6 +6,6 @@ class LineItem < ApplicationRecord
 
   belongs_to :donor, :class_name => 'User', optional: true
 
-  belongs_to :product, optional: true
+  belongs_to :product
 
 end

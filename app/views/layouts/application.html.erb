@@ -8,8 +8,35 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+    <header>
+      <h1>One</h1>
+      <nav>
+        <ul id="nav-list">
+          <% if @current_user.present? %>
+            <li>
+              Welcome, <%= @current_user.name %> |
+              <%= link_to 'Logout', login_path, method: 'delete' %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'Login', login_path %>
+            </li>
+            <li>
+              <%= link_to 'Sign-up', new_user_path, method: 'get' %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
+
     <%= yield %>
+
+
+    <footer>
+      <br>
+      &copy; One 2020
+    </footer>
   </body>
 </html>
