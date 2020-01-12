@@ -7,67 +7,12 @@
 <hr>
 <!-- sorted by date by default in controller-->
 <!-- by delivery or collection location -->
-<% @drops.each do | drop | %>
-
-    <ul>
-      <li>
-        <strong>Collection Location:</strong>
-        <%= drop.collection_location %>
-      </li>
-      <li>
-        <strong>Colletion Date:</strong>
-        <%= drop.collection_date %>
-      </li>
-      <li>
-        <strong>Delivery Location:</strong>
-        <%= drop.delivery_location %>
-      </li>
-      <li>
-        <strong>Delivery Date:</strong>
-        <%= drop.delivery_date %>
-      </li>
-    </ul>
-
-    <h4>Product Requests for this drop</h4>
-    <% drop.line_items.each do | product |%>
-
-        <!-- if product.recipient.present? -->
-
-            <ul>
-              <li>
-                <%= product.product.name %> x<%= product.quantity %>
-              </li>
-              <li>
-                <strong>Donor Assigned:</strong>
-                <%= product.donor.present? ? 'Yes' : 'No' %>
-              </li>
-            </ul>
-
-        <!-- end -->  <!-- if -->
-
-    <% end %>  <!-- drop loop-->
-
-    <h4>Donate or Request Products</h4>
-    <% @products.each do | pr | %>
-
-        <ul>
-          <li>
-            <%= pr.name %>
-            <ul>
-              <li>Donate</li>
-              <li>Request</li>
-            </ul>
-          </li>
-        </ul>
-
-    <% end %>
-
-<hr>
-<% end %>
+<%= render :partial => '/drops/feed' %>
 
 <h3>Create a drop</h3>
 
 <%= render :partial => '/drops/form' %>
-<!-- :locals => {:drop => Drop.new} -->
 
 <hr>
+
+<%= link_to 'View Profile', user_path(@current_user.id) %>

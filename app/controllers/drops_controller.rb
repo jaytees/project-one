@@ -23,6 +23,8 @@ class DropsController < ApplicationController
   end
 
   def index
+    @drops = Drop.all.sort_by { | collection |  collection.collection_date }
+    @products = Product.all
   end
 
   def show
