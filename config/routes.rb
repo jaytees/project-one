@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 #session
   get '/login' => 'session#new'
   post '/login' => 'session#create'
@@ -8,5 +9,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
 
   resources :drops
+
+  resources :products
 
 end

@@ -23,7 +23,10 @@ class UsersController < ApplicationController
 
 
   def show
-
+    @user = User.find params[:id]
+    @drops = @user.drops
+    @drop = Drop.new
+    @products = Product.all
   end
 
   def edit

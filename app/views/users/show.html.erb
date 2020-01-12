@@ -1,1 +1,26 @@
 <h2>Profile Page</h2>
+
+<h3>Details</h3>
+  <ul>
+    <li>
+      Name: <%= @user.name %>
+    </li>
+    <li>
+      Email: <%= @user.email %>
+    </li>
+    <li>
+      Location: <%= @user.location %>
+    </li>
+  </ul>
+<hr>
+
+<h3>Your Drops</h3>
+  <%= link_to 'All Drops', drops_path %>
+
+  <%= render :partial => '/drops/feed' %>
+
+
+<h3>Create Drop</h3>
+  <%= render :partial => '/drops/form' %>
+
+<hr>
