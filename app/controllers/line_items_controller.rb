@@ -11,14 +11,14 @@ class LineItemsController < ApplicationController
     #attempt 2
     @line_item = LineItem.new
     @products = Product.all
-    @drop = Drop.find params[:drop_id]
+    # @drop = Drop.find params[:drop_id]
+    # raise 'hell'
   end
 
   def create
 
     # raise 'hell'
     #attempt 2
-
 
     if params[:user] == 'request'
       #push id into recipient_id
@@ -36,7 +36,7 @@ class LineItemsController < ApplicationController
 
       flash[:message] = 'Added to drop'
 
-      redirect_to user_path(@current_user.id)
+      redirect_to drop_path(params[:line_item][:drop_id])
     else
 
       @drop = Drop.find params[:line_item][:drop_id]
@@ -62,7 +62,7 @@ class LineItemsController < ApplicationController
 
   private
   def line_params
-    params.require(:line_item).permit( :drop_id, :product_id, :quantity, :recipient_id, :donor_id ) #params[:line_item][:quantity], :recipient_id, :donor_id
+    params.require(:line_item).permit( :drop_id, :product_id, :quantity, :recipient_id, :donor_id )
 
   end
 

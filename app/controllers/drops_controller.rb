@@ -2,6 +2,7 @@ class DropsController < ApplicationController
 
   def new
     @drop = Drop.new
+
   end
 
   def create
@@ -25,9 +26,14 @@ class DropsController < ApplicationController
   def index
     @drops = Drop.all.sort_by { | collection |  collection.collection_date }
     @products = Product.all
+    @line_item = LineItem.new
+
+
   end
 
   def show
+    
+
   end
 
   def edit

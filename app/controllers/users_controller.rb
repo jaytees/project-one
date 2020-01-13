@@ -27,13 +27,19 @@ class UsersController < ApplicationController
     @drops = @user.drops
     @drop = Drop.new
     @products = Product.all
+    @line_item = LineItem.new
   end
 
   def edit
     @user = User.find params[:id]
     @drops = Drop.all.sort_by { | collection |  collection.collection_date }
-    @drop = Drop.new
     @products = Product.all
+
+
+    @line_item = LineItem.new
+
+    @drop = Drop.new
+
   end
 
   def update

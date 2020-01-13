@@ -1,5 +1,7 @@
 <% @drops.each do | drop | %>
 
+
+
     <ul>
       <li>
         <strong>Collection Location:</strong>
@@ -39,20 +41,8 @@
     <% end %>  <!-- drop loop-->
 
     <h4>Donate or Request Products</h4>
-    <% @products.each do | pr | %>
 
-        <ul>
-          <li>
-            <!-- :product_id => pr.id, -->
-            <%= link_to pr.name, new_line_item_path(:drop_id => drop.id)%>
-            <ul>
-              <li>Donate</li>
-              <li>Request</li>
-            </ul>
-          </li>
-        </ul>
-
-    <% end %>
+  <%= render partial: '/line_items/form', locals: {drop_id: drop.id} %>
 
 <hr>
 <% end %>
