@@ -49,15 +49,48 @@ class LineItemsController < ApplicationController
   end
 
   def index
+    @drops = Drop.all
   end
 
   def show
+    # @artist = Artist.find params[:id]
+
   end
 
   def edit
+    # @artist = Artist.find params[:id]
+    @drop = Drop.find 111
+    @line_item = LineItem.find params[:id]
+
   end
 
   def update
+
+    # artist = Artist.find params[:id]
+    @line_item = LineItem.find params[:id]
+
+
+
+    #maybe turn into a model function / change logic
+    if params[:user] == 'request'
+      #push id into recipient_id
+      params[:line_item][:recipient_id] = @current_user.id
+
+    else
+      params[:line_item][:donor_id] = @current_user.id
+      puts "================== id: #{@line_item.id} ============= donor_id #{params[:line_item][:donor_id]}"
+    end
+    puts "========================== PARAMS", params
+
+    #artist.update artist_params
+    @line_item.update donor_id: params[:line_item][:donor_id]
+
+    puts "================== id: #{@line_item.id} ============= donor_id #{@line_item.donor_id} ========== drop #{params[:line_item][:drop_id]}"
+
+    # raise 'hell'
+    # @article.update(title: 'A new title')
+
+    redirect_to drop_path(params[:line_item][:drop_id])
   end
 
   def destroy

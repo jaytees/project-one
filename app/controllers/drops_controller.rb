@@ -12,8 +12,9 @@ class DropsController < ApplicationController
     if @drop.persisted? #&& @drop.owner == @current_user.id
 
       flash[:message] = 'Drop successfully created'
-      # redirect_to user_path(@current_user.id)
-      render :new
+
+      redirect_to user_path(params[:drop][:owner_id])
+      # render :new
     else
 
       # stop error redirecting from page, has to do with below
@@ -25,8 +26,6 @@ class DropsController < ApplicationController
 
   def index
     @drops = Drop.all
-    # .sort_by { | collection |  collection.collection_date }
-    # @products = Product.all
     @line_item = LineItem.new
 
 

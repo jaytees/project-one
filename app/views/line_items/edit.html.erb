@@ -1,2 +1,44 @@
-<h1>LineItems#edit</h1>
-<p>Find me in app/views/line_items/edit.html.erb</p>
+<h2>Most requested test</h2>
+
+
+<h4>Product Requests for this drop</h4>
+  <!-- render makes this line redundant -->
+<% @drop.line_items.each do | product |%>
+
+    <!-- if product.recipient.present? -->
+
+
+    <ul>
+      <li>
+        <%= product.product.name %> x<%= product.quantity %>
+      </li>
+      <li>
+        <strong>Donor Assigned:</strong>
+
+        <% if product.donor.present? %>
+            <%= 'Yes' %>
+        <% else %>
+            <%= 'No' %>
+
+          <%= form_for @line_item do |f| %>
+
+            <%= radio_button_tag(:user, 'donate') %>
+            <%= f.label("Donate") %>
+
+            <%= f.hidden_field :quantity, :value => product.quantity %>
+            <%= f.hidden_field :drop_id, :value => @drop.id %>
+            <%= f.hidden_field :product_id, :value => product.product.id %>
+
+
+            <%= f.submit 'Submit' %>
+
+          <% end %>
+
+        <% end %>
+
+      </li>
+    </ul>
+
+    <!-- end -->  <!-- if -->
+
+<% end %>  <!-- drop loop-->

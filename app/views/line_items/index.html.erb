@@ -1,2 +1,29 @@
 <h1>LineItems#index</h1>
 <p>Find me in app/views/line_items/index.html.erb</p>
+
+<% @drops.each do | drop | %>
+
+<ul>
+  <li>
+    <strong>Collection Location:</strong>
+    <%= drop.collection_location %>
+  </li>
+  <li>
+    <strong>Colletion Date:</strong>
+    <%= drop.collection_date %>
+  </li>
+  <li>
+    <strong>Delivery Location:</strong>
+    <%= drop.delivery_location %>
+  </li>
+  <li>
+    <strong>Delivery Date:</strong>
+    <%= drop.delivery_date %>
+  </li>
+</ul>
+
+<%= render partial: 'test', collections: @line_item.all.where (drop_id = drop.id), product %>
+
+
+
+<% end %>

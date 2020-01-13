@@ -1,0 +1,28 @@
+<h4>Product Requests for this drop</h4>
+<% @drop.line_items.each do | product |%>
+
+    <!-- if product.recipient.present? -->
+
+        <ul>
+          <li>
+            <%= product.product.name %> x<%= product.quantity %>
+          </li>
+          <li>
+            <strong>Donor Assigned:</strong>
+
+            <% if product.donor.present? %>
+                <%= 'Yes' %>
+            <% else %>
+
+              <%= radio_button_tag(:user, 'donate') %>
+              <%= f.label("Donate") %>
+
+              <%= f.submit 'Submit' %>
+            <% end %>
+
+          </li>
+        </ul>
+
+    <!-- end -->  <!-- if -->
+
+<% end %>  <!-- drop loop-->
