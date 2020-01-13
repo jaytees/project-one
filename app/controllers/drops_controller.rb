@@ -32,7 +32,7 @@ class DropsController < ApplicationController
   end
 
   def show
-    
+    @drop = Drop.find params[:id]
 
   end
 

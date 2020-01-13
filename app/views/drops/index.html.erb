@@ -3,3 +3,5 @@
 <!-- sorted by date by default in controller-->
 <!-- by delivery or collection location -->
 <%= render :partial => '/drops/feed' %>
+
+<%= render :partial => '/drops/feed', :collection => @Drops, :as => :drop %>
