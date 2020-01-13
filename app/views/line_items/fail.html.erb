@@ -1,0 +1,46 @@
+<h1>LineItems#new</h1>
+<p>Find me in app/views/line_items/new.html.erb</p>
+
+<% if flash[:message].present? %>
+  <p><%= flash[:message] %></p>
+<% end %>
+
+
+<% @products.each do | pr | %>
+
+    <%= form_for @line_item do | f | %>
+
+    <%= f.hidden_field :drop_id, :value => @drop.id %>
+    <%= f.hidden_field :product_id, :value => pr.id %>
+
+    <strong><%= f.label pr.name %></strong>
+    <br>
+
+    <%= radio_button_tag(:recipient_id, @current_user.id) %>
+    <%= label_tag("Request") %>
+    <% f.label :quantity %>
+    <%= f.number_field :quantity%>
+    <br>
+    <%= f.submit 'Submit' %>
+    <% end %>
+
+    <%= form_for @line_item do | f | %>
+
+    <%= f.hidden_field :drop_id, :value => @drop.id %>
+    <%= f.hidden_field :product_id, :value => pr.id %>
+
+
+    <br>
+
+    <%= radio_button_tag(:donor_id, @current_user.id) %>
+    <%= label_tag("Donate") %>
+    <% f.label :quantity %>
+    <%= f.number_field :quantity%>
+    <br>
+    <%= f.submit 'Submit' %>
+    <% end %>
+    <br>
+
+
+
+<% end %>

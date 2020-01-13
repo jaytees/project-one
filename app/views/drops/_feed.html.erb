@@ -43,7 +43,8 @@
 
         <ul>
           <li>
-            <%= pr.name %>
+            <!-- :product_id => pr.id, -->
+            <%= link_to pr.name, new_line_item_path(:drop_id => drop.id)%>
             <ul>
               <li>Donate</li>
               <li>Request</li>
