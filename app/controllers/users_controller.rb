@@ -27,15 +27,25 @@ class UsersController < ApplicationController
 
     @drop = Drop.new
 
-    @line_item = LineItem.new
+    @line_item_new = LineItem.new
   end
 
   def edit
     @user = User.find params[:id]
     @drops = Drop.all
 
-    @line_item = LineItem.new
+    # #line_item.update
+    # @line_item = LineItem.find 74
+    #
+    # @line_item_update = @line_item.update donor_id: @current_user.id
+    #
+    # # @drop = Drop.find params[:id]
+    # @drop_items = LineItem.all.where ('drop_id = 113')  #just so it works for test version
 
+    #donate or request for each drop
+    @line_item_new = LineItem.new
+
+    #create new drop
     @drop = Drop.new
 
   end

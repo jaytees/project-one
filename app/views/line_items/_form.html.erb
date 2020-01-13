@@ -6,7 +6,7 @@
 
 <% Product.all.each do | pr | %>
 
-  <%= form_for @line_item do |f| %>
+  <%= form_for @line_item_new do |f| %>
 
 
     <%= f.hidden_field :drop_id, :value => drop_id %>

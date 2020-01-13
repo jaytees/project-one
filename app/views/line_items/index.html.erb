@@ -22,8 +22,9 @@
   </li>
 </ul>
 
-<%= render partial: 'test', collections: @line_item.all.where (drop_id = drop.id), product %>
+<%= drop.id %>
 
+  <%= render partial: 'test', locals: {drop_id: drop.id} %>
 
 
 <% end %>

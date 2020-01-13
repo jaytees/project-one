@@ -2,43 +2,40 @@
 
 
 <h4>Product Requests for this drop</h4>
-  <!-- render makes this line redundant -->
-<% @drop.line_items.each do | product |%>
-
-    <!-- if product.recipient.present? -->
 
 
-    <ul>
-      <li>
-        <%= product.product.name %> x<%= product.quantity %>
-      </li>
-      <li>
-        <strong>Donor Assigned:</strong>
+<% @drops.each do | drop | %>
 
-        <% if product.donor.present? %>
-            <%= 'Yes' %>
-        <% else %>
-            <%= 'No' %>
+<ul>
+  <li>
+    <strong>Collection Location:</strong>
+    <%= drop.collection_location %>
+  </li>
+  <li>
+    <strong>Colletion Date:</strong>
+    <%= drop.collection_date %>
+  </li>
+  <li>
+    <strong>Delivery Location:</strong>
+    <%= drop.delivery_location %>
+  </li>
+  <li>
+    <strong>Delivery Date:</strong>
+    <%= drop.delivery_date %>
+  </li>
+</ul>
 
-          <%= form_for @line_item do |f| %>
+<%= drop.id %>
 
-            <%= radio_button_tag(:user, 'donate') %>
-            <%= f.label("Donate") %>
+  <h4>Product Requests for this drop</h4>
 
-            <%= f.hidden_field :quantity, :value => product.quantity %>
-            <%= f.hidden_field :drop_id, :value => @drop.id %>
-            <%= f.hidden_field :product_id, :value => product.product.id %>
+  <%# <%= render :partial => 'test', :object => @drop, :as => :drop, locals: {drop_id: drop.id} %>  %>
+
+  <%= render partial: 'test', locals: {drop_id: drop.id} %>
+
+  <h4>Donate or Request Products</h4>
+
+  <%= render partial: '/line_items/form', locals: {drop_id: drop.id} %>
 
 
-            <%= f.submit 'Submit' %>
-
-          <% end %>
-
-        <% end %>
-
-      </li>
-    </ul>
-
-    <!-- end -->  <!-- if -->
-
-<% end %>  <!-- drop loop-->
+<% end %>

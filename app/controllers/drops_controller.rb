@@ -26,14 +26,15 @@ class DropsController < ApplicationController
 
   def index
     @drops = Drop.all
-    @line_item = LineItem.new
+    @line_item_new = LineItem.new
 
 
   end
 
   def show
+    #shows Individual drop
     @drop = Drop.find params[:id]
-    @line_item = LineItem.new
+    @line_item_new = LineItem.new
 
   end
 

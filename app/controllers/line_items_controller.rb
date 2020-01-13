@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
     # @user = @current_user.id
 
     #attempt 2
-    @line_item = LineItem.new
+    @line_item_new = LineItem.new
     # @products = Product.all
     # @drop = Drop.find params[:drop_id]
     # raise 'hell'
@@ -29,10 +29,10 @@ class LineItemsController < ApplicationController
 
     puts "========================== PARAMS", params
 
-    @line_item = LineItem.create! line_params
+    @line_item_new = LineItem.create! line_params
 
 
-    if @line_item.persisted?
+    if @line_item_new.persisted?
 
       flash[:message] = 'Added to drop'
 
@@ -49,7 +49,13 @@ class LineItemsController < ApplicationController
   end
 
   def index
-    @drops = Drop.all
+  # #works on index page
+  #   @drops = Drop.all  #for the index
+  #   # @drop = Drop.find 112
+  #   @line_item = LineItem.find 67
+  #
+  #   @drop_items = LineItem.all.where ('drop_id = 112')
+
   end
 
   def show
@@ -59,17 +65,31 @@ class LineItemsController < ApplicationController
 
   def edit
     # @artist = Artist.find params[:id]
-    @drop = Drop.find 111
+    @drops = Drop.all  #for the index
+    # @drop = Drop.find 112
+
+
+
     @line_item = LineItem.find params[:id]
 
+    # @drop = Drop.find params[:id]
+    # @drop_items = LineItem.all.where ('drop_id = 113')  #just so it works for test version
+
+
+    puts "=======================", params
+
   end
+
+
 
   def update
 
     # artist = Artist.find params[:id]
     @line_item = LineItem.find params[:id]
 
+    puts "====================", params
 
+    # raise 'hell'
 
     #maybe turn into a model function / change logic
     if params[:user] == 'request'
@@ -81,6 +101,8 @@ class LineItemsController < ApplicationController
       puts "================== id: #{@line_item.id} ============= donor_id #{params[:line_item][:donor_id]}"
     end
     puts "========================== PARAMS", params
+
+
 
     #artist.update artist_params
     @line_item.update donor_id: params[:line_item][:donor_id]
@@ -103,3 +125,20 @@ class LineItemsController < ApplicationController
   end
 
 end
+# <% drop.line_items.each do | item |%>
+#
+#     <!-- if item.recipient.present? -->
+#       <p>item id:<%= item.id %></p>
+#         <ul>
+#           <li>
+#             <%= item.product.name %> x<%= item.quantity %>
+#           </li>
+#           <li>
+#             <strong>Donor Assigned:</strong>
+#             <%= item.donor.present? ? 'Yes' : 'No' %>
+#           </li>
+#         </ul>
+#
+#     <!-- end -->  <!-- if -->
+#
+# <% end %>  <!-- drop loop-->
