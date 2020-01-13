@@ -10,7 +10,7 @@ class LineItemsController < ApplicationController
 
     #attempt 2
     @line_item = LineItem.new
-    @products = Product.all
+    # @products = Product.all
     # @drop = Drop.find params[:drop_id]
     # raise 'hell'
   end
@@ -39,8 +39,11 @@ class LineItemsController < ApplicationController
       redirect_to drop_path(params[:line_item][:drop_id])
     else
 
-      @drop = Drop.find params[:line_item][:drop_id]
-      @products = Product.all
+#below doesnt seem to be necessary becuase  we only add from drop form and redirects to the drop, never create line item otherwise
+
+      # @drop = Drop.find params[:line_item][:drop_id]
+
+      # @products = Product.all
       render :new
     end
   end

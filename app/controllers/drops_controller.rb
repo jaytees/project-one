@@ -24,8 +24,9 @@ class DropsController < ApplicationController
   end
 
   def index
-    @drops = Drop.all.sort_by { | collection |  collection.collection_date }
-    @products = Product.all
+    @drops = Drop.all
+    # .sort_by { | collection |  collection.collection_date }
+    # @products = Product.all
     @line_item = LineItem.new
 
 
@@ -33,6 +34,7 @@ class DropsController < ApplicationController
 
   def show
     @drop = Drop.find params[:id]
+    @line_item = LineItem.new
 
   end
 

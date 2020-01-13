@@ -17,7 +17,7 @@
 <h3>Your Drops</h3>
   <%= link_to 'All Drops', drops_path %>
 
-  <%= render :partial => '/drops/feed' %>
+  <%=  render :partial => '/drops/feed', :collection => @user.drops, :as => :drop %>
 
 
 <h3>Create Drop</h3>

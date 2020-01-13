@@ -1,5 +1,8 @@
 class Drop < ApplicationRecord
 
+#sorts drops by earliest date by default
+  default_scope { order(collection_date: :asc) }
+
   belongs_to :owner, :class_name => 'User'
 
   has_many :line_items

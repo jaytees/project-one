@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    # most requested items
+    # most requested items - not quantity
     # add sort by location facility
 
     @products = Product.all.sort_by { | product_count |  product_count.line_items.count }.reverse  #sorts by most appearances in line items

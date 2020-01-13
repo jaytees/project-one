@@ -2,7 +2,7 @@
 
 <h3>Most Requested Items</h3>
 
-  <%= render :partial => '/products/most_requested' %>
+  <%= render :partial => 'most_requested', :collection => @products, :as => :product %>
 
 <hr>
 
