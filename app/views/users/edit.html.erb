@@ -7,7 +7,10 @@
 <hr>
 <!-- sorted by date by default in drop model-->
 <!-- add by delivery or collection location? -->
-<%=  render :partial => '/drops/feed', :collection => @drops, :as => :drop %>
+
+<ul>
+  <%=  render :partial => '/drops/feed', :collection => @drops, :as => :drop %>
+</ul>
 
 <h3>Create a drop</h3>
 

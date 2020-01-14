@@ -5,26 +5,28 @@
 
 <!-- form for every product on 1 drop -->
 <% Product.all.each do | pr | %>
+  <ul>
+    <li>
+      <%= form_for @line_item_new do |f| %>
 
-  <%= form_for @line_item_new do |f| %>
+        <%= f.hidden_field :drop_id, :value => drop_id %>
+        <%= f.hidden_field :product_id, :value => pr.id %>
 
-    <%= f.hidden_field :drop_id, :value => drop_id %>
-    <%= f.hidden_field :product_id, :value => pr.id %>
+        <strong><%= pr.name %></strong>
+        <br>
 
-    <strong><%= pr.name %></strong>
-    <br>
+          <%= radio_button_tag(:user, 'request') %>
+          <%= f.label("Request") %>
+          <%= radio_button_tag(:user, 'donate') %>
+          <%= f.label("Donate") %>
 
-      <%= radio_button_tag(:user, 'request') %>
-      <%= f.label("Request") %>
-      <%= radio_button_tag(:user, 'donate') %>
-      <%= f.label("Donate") %>
+          <% f.label :quantity %>
+          <%= f.number_field :quantity%>
+          <br>
 
-      <% f.label :quantity %>
-      <%= f.number_field :quantity%>
-      <br>
+        <%= f.submit 'Submit' %>
 
-    <%= f.submit 'Submit' %>
-
-  <% end %>
-
+      <% end %>
+    </li>
+  </ul>
 <% end %>
