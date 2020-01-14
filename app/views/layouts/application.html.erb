@@ -12,10 +12,24 @@
     <header>
       <h1>One</h1>
       <nav>
-        <ul id="nav-list">
+        <ul>
+          <li>
+            <%= link_to 'Collections and Deliveries', drops_path %>
+            <ul>
+              <li>
+                <%= link_to 'Create Drop', new_drop_path %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to 'Most Requested Items', products_path %>
+          </li>
+        </ul>
+        <ul id="nav-user-controls">
           <% if @current_user.present? %>
             <li>
               Welcome, <%= @current_user.name %> |
+              <%= link_to 'View Profile', user_path(@current_user.id) %> |
               <%= link_to 'Logout', login_path, method: 'delete' %>
             </li>
           <% else %>
