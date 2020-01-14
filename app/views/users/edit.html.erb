@@ -6,10 +6,8 @@
 <h3>Up'n'Coming drops</h3>
 <hr>
 <!-- sorted by date by default in drop model-->
-<!-- by delivery or collection location -->
+<!-- add by delivery or collection location? -->
 <%=  render :partial => '/drops/feed', :collection => @drops, :as => :drop %>
-
-<!-- FROM ABOVE, ADDS FORM IN AFTER EVERY FEED RENDER, spacer_template: '/line_items/test' -->
 
 <h3>Create a drop</h3>
 

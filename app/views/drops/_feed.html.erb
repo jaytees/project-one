@@ -18,23 +18,18 @@
     </ul>
 
     <h4>Product Requests for this drop</h4>
-<%= drop.id %>
 
-<ul>
-  <%= render partial: 'line_items/test',
-      collection: drop.line_items,
-      as: 'item',
-      locals: {drop_id: drop.id}
-  %>
-</ul>
-
-
-
-
+    <ul>
+      <%= render partial: 'line_items/by_request',
+          collection: drop.line_items,
+          as: 'item',
+          locals: {drop_id: drop.id}
+      %>
+    </ul>
 
     <h4>Donate or Request Products</h4>
 
-  <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
+    <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
 
 <hr>
 <!-- end  -->
