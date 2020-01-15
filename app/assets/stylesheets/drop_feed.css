@@ -47,18 +47,19 @@
 
 p.collection-info {
   margin: 0.5em;
+  color: white;
 }
 
-div[id^="toggle-product-requests-button"] {
+div.toggle-product-requests-button {
   padding: 1em 0 1em 0;
 }
 
 
-div[id^="toggle-product-requests-content"]{
+div[class^="toggle-product-requests-content"]{
     display: none;
 
 }
 
-div[id^="toggle-d-p-requests-content"] {
+div[class^="toggle-d-p-requests-content"] {
   display: none;
 }

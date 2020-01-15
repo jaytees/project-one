@@ -53,7 +53,7 @@ div#shape-container {
      z-index: 1;
      background-color: rgb(255, 255, 255);
 
-     top: -20px;
+     top: -38px;
 
 }
 
@@ -99,19 +99,19 @@ div#logo-image {
   color: black;
 }
 
-div#homepage-content {
+div#homepage-cover {
       position: relative;
       z-index: 2;
 
       background-color: #fff;
 
-      padding: 0 3rem;
+      padding: 1rem 3rem;
 }
 
 
 /* button */
 
-#toggle-signup-button button {
+#toggle-signup-button button, .signup-submit-button {
   display:inline-block;
   padding:0.46em 1.6em;
   border:0.1em solid #FFFFFF;
@@ -146,4 +146,15 @@ div#homepage-content {
 
 #toggle-signup-form {
   display: none;
+}
+
+
+h2.drop-feed {
+  padding: 1rem;
+}
+
+p.feed-text {
+
+  padding: 2rem;
+
 }

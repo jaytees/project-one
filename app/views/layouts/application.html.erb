@@ -13,45 +13,46 @@
   <body>
     <header>
 
-        <span id="homepage-logo">
-          <%= link_to 'One', root_path%>
-        </span>
-
-
 
   <nav>
 
-    <span id="dropdown-wrapper">
-        <%= link_to 'Collections and Deliveries', drops_path %>
+    <div id="homepage-logo">
+      <%= link_to 'One', root_path%>
+    </div>
+<div id="nav-links">
+      <div id="dropdown-wrapper">
+          <%= link_to 'Drops', drops_path %>
 
-      <div id="dropdown-content">
+        <div id="dropdown-content">
 
-            <%= link_to 'Create Drop', new_drop_path%>
+              <%= link_to 'Create Drop', new_drop_path%>
 
-        </div>
-    </span>
+          </div>
+      </div>
 
-        <%= link_to 'Most Requested Items', products_path %>
-
-
-  <span id="nav-user-controls">
-
-          <% if @current_user.present? %>
-
-              Welcome, <%= @current_user.name %> |
-              <%= link_to 'View Profile', user_path(@current_user.id)%> |
-              <%= link_to 'Logout', login_path, method: 'delete'%>
-
-          <% else %>
-
-              <%= link_to 'Login', login_path%>
+        <%= link_to 'Requested Items', products_path %>
+  
 
 
-              <%= link_to 'Sign-up', new_user_path, method: 'get'%>
 
-          <% end %>
+            <% if @current_user.present? %>
 
-        </span>
+                Welcome, <%= @current_user.name %> |
+                <%= link_to 'View Profile', user_path(@current_user.id)%> |
+                <%= link_to 'Logout', login_path, method: 'delete'%>
+
+            <% else %>
+
+                <%= link_to 'Login', login_path%>
+
+
+                <%= link_to 'Sign-up', new_user_path, method: 'get'%>
+
+            <% end %>
+
+
+  </div>
+
     </nav>
 </header>
 

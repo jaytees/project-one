@@ -27,10 +27,10 @@
           </ul> -->
     </div>
 
-  <div id="toggle-product-requests-button" class="toggle-button" data-drop-id="<%= drop.id %>">
-        <h4>Product Requests for this drop</h4>
+  <div class="toggle-product-requests-button" data-drop-id="<%= drop.id %>">
+        <h4>Click to View Product Requests for This Drop</h4>
     </div>
-    <div id="toggle-product-requests-content<%= drop.id %>">
+    <div class="toggle-product-requests-content<%= drop.id %>">
           <ul>
             <%= render partial: 'line_items/by_request',
                 collection: drop.line_items,
@@ -41,15 +41,16 @@
     </div>
 
 
-  <div id="toggle-d-p-requests-button <%= drop.id %>">
-        <h4>Donate or Request Products</h4>
-    <div id="toggle-d-p-requests-content<%= drop.id %>">
+    <div class="toggle-d-p-requests-button" data-drop-id="<%= drop.id %>">
+        <h4>Click to Donate or Request Products</h4>
+    </div>
+    <div class="toggle-d-p-requests-content<%= drop.id %>">
 
           <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
 
     </div>
 
-  </div><!-- donate or request -->
+    <%= link_to 'Click to View full details', drop_path(drop.id) %>
 
   </div> <!-- drop feed item content -->
 

@@ -7,7 +7,7 @@
             <div id="toggle-signup-button">
 
                 <!-- <p>dropdown</p> -->
-              <%=   button_tag 'Sign Up Now' %>
+              <%=   button_tag 'Sign Up Now'%>
 
            </div>
              <div id="toggle-signup-form">
@@ -45,41 +45,20 @@
   <div class="logo-image"></div>
 </div>
 
-<div id="homepage-content">
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
-<p>j</p>
+<div id="homepage-cover">
+
+<div id="content-container">
+
+  <!-- <div id="homepage-drop-feed"> -->
+      <h2 class="drop-feed">Drop feed</h2>
+      <hr>
+        <p class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in. </p>
+
+          <%=  render :partial => 'drops/feed', :collection => @drops.limit(3), :as => :drop %>
+
+        <%= link_to 'Click to View all Drops', drops_path %>
+
+      <!-- </div> -->
+    </div>
+
 </div>

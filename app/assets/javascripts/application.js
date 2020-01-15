@@ -29,25 +29,32 @@ $(document).ready(function() {
 
 // drop feed toggle
 //  product request for drop
-  // $("[id^=toggle-product-requests-button]").click(function() {
-  $(".toggle-button").click(function() {
+
+  $(".toggle-product-requests-button").click(function() {
 
     const dropId = $(this).data('drop-id');
 
-    console.log(`#toggle-product-requests-content${dropId} form`);
+    // console.log(`.toggle-product-requests-content${dropId}`);
 
-    $(`#toggle-product-requests-content${dropId} form`).show();
+    $(`.toggle-product-requests-content${dropId}`).toggle(
 
-    //
-    // $("[id^=toggle-product-requests-content]").show()
+      // function(){$(".toggle-product-requests-button").css({"color": "white"});},
+
+
+    ); //toggle
+
 
   });
 
 // drop and product requests
-  $("[id^=toggle-d-p-requests-button]").click(function() {
+  $(".toggle-d-p-requests-button").click(function() {
 
+    const dropId = $(this).data('drop-id');
 
-    $("[id^=toggle-d-p-requests-content]").show()
+    // console.log(`.toggle-product-requests-content${dropId}`);
+
+    $(`.toggle-d-p-requests-content${dropId}`).toggle();
+
 
   });
 
