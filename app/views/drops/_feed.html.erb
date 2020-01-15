@@ -8,27 +8,28 @@
     <div id="collection-details-container">
           <!-- <ul>
             <li> -->
-              <p><strong>Collection Location:</strong>
+              <p class="collection-info"><strong>Collection Location:</strong>
                 <%= drop.collection_location %></p>
             <!-- </li>
             <li> -->
-              <p><strong>Colletion Date:</strong>
+              <p class="collection-info"><strong>Colletion Date:</strong>
                 <%= drop.collection_date %></p>
             <!-- </li>
             <li> -->
             <br>
-              <p><strong>Delivery Location:</strong>
+              <p class="collection-info"><strong>Delivery Location:</strong>
                 <%= drop.delivery_location %></p>
             <!-- </li>
             <li> -->
-            <p><strong>Delivery Date:</strong>
+            <p class="collection-info"><strong>Delivery Date:</strong>
               <%= drop.delivery_date %></p>
             <!-- </li>
           </ul> -->
     </div>
 
-  <div id="toggle-product-requests-button<%= drop.id %>">
+  <div id="toggle-product-requests-button" class="toggle-button" data-drop-id="<%= drop.id %>">
         <h4>Product Requests for this drop</h4>
+    </div>
     <div id="toggle-product-requests-content<%= drop.id %>">
           <ul>
             <%= render partial: 'line_items/by_request',
@@ -38,9 +39,9 @@
             %>
           </ul>
     </div>
-  </div>
 
-  <div id="toggle-d-p-requests-button" class=<%= drop.id %>>
+
+  <div id="toggle-d-p-requests-button <%= drop.id %>">
         <h4>Donate or Request Products</h4>
     <div id="toggle-d-p-requests-content<%= drop.id %>">
 

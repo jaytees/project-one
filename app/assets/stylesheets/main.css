@@ -48,6 +48,7 @@ nav {
   justify-content: flex-end;
   align-items: baseline;
   padding: 1em;
+  color: black;
 }
 
 nav a{

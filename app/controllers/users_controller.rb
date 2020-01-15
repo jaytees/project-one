@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   before_action :check_if_logged_in, only: [:show, :edit, :update, :destroy]
 
+
   def new
     @user = User.new
   end

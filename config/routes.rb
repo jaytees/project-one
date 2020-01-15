@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'map/test'
   root to: 'pages#homepage'
 
 #session

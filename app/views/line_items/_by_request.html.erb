@@ -1,8 +1,8 @@
   <li>
-    <%= item.product.name %> x<%= item.quantity %>
+    <strong><%= item.product.name %> x<%= item.quantity %></strong>
     <br>
 
-    <strong>Donor Assigned:</strong>
+    <p>Donor Assigned:</p>
 
     <% if item.donor.present? %>
         <%= 'Yes' %>

@@ -19,29 +19,27 @@ $(document).ready(function() {
 // gotta be easier way but :visible not working
 
 // homepage sign up
+
   $("#toggle-signup-button").click(function() {
 
-
-    if (($("#toggle-signup-form").css('display') === 'none' )) {
-
-      $("#toggle-signup-form").show()
-
-
-    } else {
-
-        $("#toggle-signup-form").hide()
-
-    }
+      $("#toggle-signup-form").toggle()
 
   });
 
 
 // drop feed toggle
 //  product request for drop
-  $("[id^=toggle-product-requests-button]").click(function() {
+  // $("[id^=toggle-product-requests-button]").click(function() {
+  $(".toggle-button").click(function() {
 
+    const dropId = $(this).data('drop-id');
 
-    $("[id^=toggle-product-requests-content]").toggle()
+    console.log(`#toggle-product-requests-content${dropId} form`);
+
+    $(`#toggle-product-requests-content${dropId} form`).show();
+
+    //
+    // $("[id^=toggle-product-requests-content]").show()
 
   });
 
@@ -49,7 +47,7 @@ $(document).ready(function() {
   $("[id^=toggle-d-p-requests-button]").click(function() {
 
 
-    $("[id^=toggle-d-p-requests-content]").toggle()
+    $("[id^=toggle-d-p-requests-content]").show()
 
   });
 
