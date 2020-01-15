@@ -35,20 +35,21 @@ $(document).ready(function() {
 
   });
 
+
 // drop feed toggle
 //  product request for drop
-  $("#toggle-product-requests-button").click(function() {
+  $("[id^=toggle-product-requests-button]").click(function() {
 
 
-    $("#toggle-product-requests-content").toggle()
+    $("[id^=toggle-product-requests-content]").toggle()
 
   });
 
 // drop and product requests
-  $("#toggle-d-p-requests-button").click(function() {
+  $("[id^=toggle-d-p-requests-button]").click(function() {
 
 
-    $("#toggle-d-p-requests-content").toggle()
+    $("[id^=toggle-d-p-requests-content]").toggle()
 
   });
 
