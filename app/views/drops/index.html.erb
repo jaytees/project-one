@@ -3,5 +3,10 @@
 <!-- sorted by date by default in controller-->
 <!-- by delivery or collection location -->
 
-<!-- render with loop -->
-<%=  render :partial => 'feed', :collection => @drops, :as => :drop %>
+
+<div id="drop-feed-container">
+
+  <!-- renders with loop -->
+  <%=  render :partial => 'feed', :collection => @drops, :as => :drop %>
+
+</div>

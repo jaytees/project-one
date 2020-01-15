@@ -1,34 +1,53 @@
+<div id="drop-feed-item">
+  <div id="calendar">
+    <div id="calendar-bar">
+    </div>
+      <h4 id="collection-date-display"><%= drop.collection_date %></h4>
+  </div>
+<div id="drop-feed-item-content">
+    <div id="collection-details-container">
+          <!-- <ul>
+            <li> -->
+              <p><strong>Collection Location:</strong>
+                <%= drop.collection_location %></p>
+            <!-- </li>
+            <li> -->
+              <p><strong>Colletion Date:</strong>
+                <%= drop.collection_date %></p>
+            <!-- </li>
+            <li> -->
+            <br>
+              <p><strong>Delivery Location:</strong>
+                <%= drop.delivery_location %></p>
+            <!-- </li>
+            <li> -->
+            <p><strong>Delivery Date:</strong>
+              <%= drop.delivery_date %></p>
+            <!-- </li>
+          </ul> -->
+    </div>
+  <div id="toggle-product-requests-button">
+        <h4>Product Requests for this drop</h4>
+    <div id="toggle-product-requests-content">
+          <ul>
+            <%= render partial: 'line_items/by_request',
+                collection: drop.line_items,
+                as: 'item',
+                locals: {drop_id: drop.id}
+            %>
+          </ul>
+    </div>
+  </div>
+  <div id="toggle-d-p-requests-button">
+        <h4>Donate or Request Products</h4>
+    <div id="toggle-d-p-requests-content">
 
-      <li>
-        <strong>Collection Location:</strong>
-        <%= drop.collection_location %>
-      </li>
-      <li>
-        <strong>Colletion Date:</strong>
-        <%= drop.collection_date %>
-      </li>
-      <li>
-        <strong>Delivery Location:</strong>
-        <%= drop.delivery_location %>
-      </li>
-      <li>
-        <strong>Delivery Date:</strong>
-        <%= drop.delivery_date %>
-      </li>
+          <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
 
-    <h4>Product Requests for this drop</h4>
+    </div>
 
-    <ul>
-      <%= render partial: 'line_items/by_request',
-          collection: drop.line_items,
-          as: 'item',
-          locals: {drop_id: drop.id}
-      %>
-    </ul>
+  </div><!-- donate or request -->
 
-    <h4>Donate or Request Products</h4>
+  </div> <!-- drop feed item content -->
 
-    <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
-
-<hr>
-<!-- end  -->
+</div> <!-- drop feed item -->

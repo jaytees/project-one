@@ -1,0 +1,54 @@
+#drop-feed-item {
+  height: auto;
+  width: auto;
+  background-color: #FF9800;
+  padding: 1em;
+  margin: 1em;
+  box-sizing: border-box;
+  border-radius: 1em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#calendar {
+  height: 7.5em;
+  width: 8.5em;
+  background-color: white;
+  border-radius: 1em;
+  align-self: center;
+  margin:0.5em 1.5em;
+  border-bottom: double;
+  box-shadow: -0.2em 0.2em 0px 1px #00000026;
+}
+
+#calendar-bar {
+  width: 8.5em;
+  height: 2em;
+  background: red;
+  border-radius: 1em 1em 0 0;
+}
+
+#collection-date-display {
+  text-align: center;
+  margin: 1.5em auto;
+}
+
+
+#drop-feed-item-content {
+    margin: 0.5em 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#collection-details-container {
+  display: flex;
+}
+
+#toggle-product-requests-content {
+    display: none;
+}
+
+#toggle-d-p-requests-content {
+  display: none;
+}

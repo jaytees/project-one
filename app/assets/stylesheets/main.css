@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
+
+* {
+  /* border: 0.5px solid grey; */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  /* font-size: 100%; */
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  /* margin: 0 auto; */
+
+  /* background-color: #f5deb3 */
+
+}
+
+
+header {
+  /* z-index: 2; */
+  background-color: #f8883a;
+  color: white;
+  padding: 0 1em 1em 1em;
+  border-radius: 0 0 1em 1em;
+  height: 5em;
+}
+
+footer {
+    /* z-index: 2; */
+    background-color: #f8883a;
+    color: white;
+    padding: 1em;
+    /* border-radius: 0 0 1em 1em; */
+
+}
+
+
+
+nav {
+  /* z-index: 10; */
+  /* background-color: #F39F56; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  padding: 1em;
+}
+
+nav a{
+  text-decoration: none;
+  color: inherit;
+  padding-right: 1em;
+}
+
+
+#nav-user-controls {
+
+}
+
+
+
+#content-container {
+  z-index: 2;
+  margin: 5em auto;
+  width: 70vw;
+  display: grid;
+  background-color: #f1f5f2;
+  border-radius: 1em;
+  box-sizing: border-box;
+  padding: 2em 4em;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+#homepage-logo > a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 4em;
+  font-weight: 800;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* dropdown */
+
+/* makes drop down appear */
+#dropdown-wrapper:hover #dropdown-content {
+  display: block;
+}
+
+/* change the anchors on hover */
+#dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* pure styling to anchors in drop down content */
+#dropdown-content a {
+  color: black;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+#dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}

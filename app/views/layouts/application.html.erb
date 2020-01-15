@@ -1,57 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>One</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
   <body>
     <header>
-      <h1>One</h1>
-      <nav>
-        <ul>
-          <li>
-            <%= link_to 'Collections and Deliveries', drops_path %>
-            <ul>
-              <li>
-                <%= link_to 'Create Drop', new_drop_path %>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <%= link_to 'Most Requested Items', products_path %>
-          </li>
-        </ul>
-        <ul id="nav-user-controls">
+
+        <span id="homepage-logo">
+          <%= link_to 'One', root_path%>
+        </span>
+
+
+
+  <nav>
+
+    <span id="dropdown-wrapper">
+        <%= link_to 'Collections and Deliveries', drops_path %>
+
+      <div id="dropdown-content">
+
+            <%= link_to 'Create Drop', new_drop_path%>
+
+        </div>
+    </span>
+
+        <%= link_to 'Most Requested Items', products_path %>
+
+
+  <span id="nav-user-controls">
+
           <% if @current_user.present? %>
-            <li>
+
               Welcome, <%= @current_user.name %> |
-              <%= link_to 'View Profile', user_path(@current_user.id) %> |
-              <%= link_to 'Logout', login_path, method: 'delete' %>
-            </li>
+              <%= link_to 'View Profile', user_path(@current_user.id)%> |
+              <%= link_to 'Logout', login_path, method: 'delete'%>
+
           <% else %>
-            <li>
-              <%= link_to 'Login', login_path %>
-            </li>
-            <li>
-              <%= link_to 'Sign-up', new_user_path, method: 'get' %>
-            </li>
+
+              <%= link_to 'Login', login_path%>
+
+
+              <%= link_to 'Sign-up', new_user_path, method: 'get'%>
+
           <% end %>
-        </ul>
-      </nav>
-    </header>
-    <hr>
+
+        </span>
+    </nav>
+</header>
 
 
-    <%= yield %>
+    <% if controller_name == 'pages' && action_name == 'homepage' %>
+
+      <%= yield %>
+
+    <% else %>
+
+      <div id="content-container">
+          <%= yield %>
+      </div>
+
+    <% end %>
 
 
     <footer>
       <br>
       &copy; One 2020
     </footer>
+    </div>
   </body>
 </html>

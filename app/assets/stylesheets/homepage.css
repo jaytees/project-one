@@ -1,0 +1,149 @@
+
+div#welcome-header {
+  /* background-color: red; */
+  height: 60%;
+
+    /* position: relative;
+
+    z-index: 0; */
+
+    /* text-align: center; */
+
+    margin-top: 10%;
+}
+
+div#welcome-header-text {
+  position: fixed;
+  margin: 14em auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#welcome-message {
+        color: white;
+        /* font-size: 2rem; */
+        padding-top: 6%
+}
+
+div#big-image {
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      background-image: url('https://storage.googleapis.com/mamamia-pwa.appspot.com/images/AAbushfire.jpg.1200x900.jpg');
+      background-position: center center;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+
+/* main */
+
+
+div#shape-container {
+
+     position: relative;
+     z-index: 1;
+     background-color: rgb(255, 255, 255);
+
+     top: -20px;
+
+}
+
+div#left-skew {
+  width: 100%;
+  height: 350px;
+  background-color: #fff;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: skewY(5deg);
+
+}
+
+div#right-skew {
+ width: 100%;
+ height: 350px;
+ background-color: #fff;
+
+ position: absolute;
+ top: 0;
+ right: 0;
+
+ transform: skewY(-5deg);
+}
+
+div#logo {
+        position: absolute;
+        top: -55px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+}
+
+div#logo-image {
+  padding: 0.5rem;
+  border-radius: 100%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  background-color: #f5f5f5;
+  background-clip: padding-box;
+  color: black;
+}
+
+div#homepage-content {
+      position: relative;
+      z-index: 2;
+
+      background-color: #fff;
+
+      padding: 0 3rem;
+}
+
+
+/* button */
+
+#toggle-signup-button button {
+  display:inline-block;
+  padding:0.46em 1.6em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.2em 0.2em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  background-color:#f8883a;
+  text-align:center;
+  transition: all 0.15s;
+}
+
+
+#toggle-signup-button button:hover{
+ text-shadow: 0 0 2em rgba(255,255,255,1);
+ color:#FFFFFF;
+ border-color:#FFFFFF;
+}
+
+@media all and (max-width:30em){
+ a.button5{
+  display:block;
+  margin:0.4em auto;
+ }
+}
+
+/* toggle sign up form */
+
+#toggle-signup-form {
+  display: none;
+}
