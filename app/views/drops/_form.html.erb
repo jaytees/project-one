@@ -13,7 +13,7 @@
   <p><%= flash[:message] %> <%= link_to 'Click here to view in profile', user_path(@current_user.id) %></p>
 <% end %>
 
-  <%= f.hidden_field :owner_id, :value => @current_user.id %>
+  <%# f.hidden_field :owner_id, :value => @current_user.id %>
   <br>
 
   <%= f.label :collection_location, 'Collection Location' %>
@@ -32,6 +32,9 @@
   <%= f.date_field :delivery_date %>
   <br>
 
+
   <%= f.submit %>
+
+
 
 <% end %>

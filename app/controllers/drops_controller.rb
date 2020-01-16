@@ -1,25 +1,76 @@
 class DropsController < ApplicationController
 
+  before_action :check_if_logged_in, except: [:index, :show, :create]
+
+
   def new
     @drop = Drop.new
 
   end
 
   def create
-    @drop = Drop.create drop_params
+
+    if @current_user.present?
+
+        params[:owner_id] = @current_user.id
+        @drop = Drop.create drop_params
+
+        if @drop.persisted?
+
+          flash[:message] = 'Drop successfully created'
+
+          redirect_to user_path(params[:drop][:owner_id])
+
+        else
+
+          render :new
+
+        end
+
+      else
+
+        flash[:message] = 'Please sign-up to create a drop'
+
+        redirect_to new_user_path
+
+
+    end #current user present?
+
+
+
+
+
+
+
+
+
+    # params[:owner_id] = @current_user.id
+
 
   #end checks no-one is hacking
-    if @drop.persisted? #&& @drop.owner == @current_user.id
-
-      flash[:message] = 'Drop successfully created'
-
-      redirect_to user_path(params[:drop][:owner_id])
-      # render :new
-    else
-
-      # stop error redirecting from page, has to do with below
-      render :new
-    end
+    # if @drop.persisted? #&& @drop.owner == @current_user.id
+    #
+    #     if @current_user.present?
+    #
+    #
+    #       flash[:message] = 'Drop successfully created'
+    #
+    #       redirect_to user_path(params[:drop][:owner_id])
+    #       # render :new
+    #     else
+    #
+    #       # stop error redirecting from page, has to do with below
+    #       render :new
+    #
+    #     end #nested if
+    #
+    #   else
+    #
+    #     flash[:message] = 'Please sign-up to create a drop'
+    #
+    #     redirect_to new_user_path
+    #
+    # end  #if persisted
 
 
   end
