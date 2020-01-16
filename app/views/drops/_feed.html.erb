@@ -4,6 +4,7 @@
     </div>
       <h4 id="collection-date-display"><%= drop.collection_date.to_s.slice(0..4)%></h4>
   </div>
+
 <div id="drop-feed-item-content">
     <div id="collection-details-container">
           <!-- <ul>
@@ -31,6 +32,11 @@
         <h4>Click to View Product Requests for This Drop</h4>
     </div>
     <div class="toggle-product-requests-content<%= drop.id %>">
+
+      <% if flash[:message].present? %>
+        <p><%= flash[:message] %></p>
+      <% end %>
+
           <ul>
             <%= render partial: 'line_items/by_request',
                 collection: drop.line_items,
@@ -50,7 +56,7 @@
 
     </div>
 
-    <%= link_to 'Click to View full details', drop_path(drop.id) %>
+    <%= link_to 'Click to View full details', drop_path(drop.id), class: 'feed-anchor'%>
 
   </div> <!-- drop feed item content -->
 

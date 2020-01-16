@@ -9,6 +9,12 @@
 <h2>Collection Location</h2>
 <hr>
 
-  <p class="placeholder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<% if @current_user.present? %>
+  <p class="placeholder-text">The collections available to you within a 10km radius are below</p>
 
   <%= render :partial => 'map' %>
+<% else %>
+
+    <p class="placeholder-text">Please login or sign up to find your closest collections</p>
+
+<% end %>

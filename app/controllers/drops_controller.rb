@@ -83,9 +83,9 @@ class DropsController < ApplicationController
     @drop = Drop.new
     @line_item_new = LineItem.new
 
-
-    @local_collections = Drop.near([@current_user.latitude, @current_user.longitude], 10, unit: :km)
-
+    if @current_user.present?
+      @local_collections = Drop.near([@current_user.latitude, @current_user.longitude], 10, unit: :km)
+    end
 
   end
 

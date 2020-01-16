@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+
+
   def new
     # raise 'hell'
 
@@ -20,33 +22,48 @@ class LineItemsController < ApplicationController
     # raise 'hell'
     #attempt 2
 
-    if params[:user] == 'request'
-      #push id into recipient_id
-      params[:line_item][:recipient_id] = @current_user.id
+    if @current_user.present?
+
+      if params[:user] == 'request'
+        #push id into recipient_id
+        params[:line_item][:recipient_id] = @current_user.id
+      else
+        params[:line_item][:donor_id] = @current_user.id
+      end
+
+      puts "========================== PARAMS", params
+
+      @line_item_new = LineItem.create! line_params
+
+
+      if @line_item_new.persisted?
+
+        flash[:message] = 'Added to drop'
+
+        redirect_to drop_path(params[:line_item][:drop_id])
+      else
+
+  #below doesnt seem to be necessary becuase  we only add from drop form and redirects to the drop, never create line item otherwise
+
+        # @drop = Drop.find params[:line_item][:drop_id]
+
+        # @products = Product.all
+        render :new
+      end
+
     else
-      params[:line_item][:donor_id] = @current_user.id
+
+      flash[:message] = 'Please sign in'
+
     end
 
-    puts "========================== PARAMS", params
-
-    @line_item_new = LineItem.create! line_params
 
 
-    if @line_item_new.persisted?
-
-      flash[:message] = 'Added to drop'
-
-      redirect_to drop_path(params[:line_item][:drop_id])
-    else
-
-#below doesnt seem to be necessary becuase  we only add from drop form and redirects to the drop, never create line item otherwise
-
-      # @drop = Drop.find params[:line_item][:drop_id]
-
-      # @products = Product.all
-      render :new
-    end
   end
+
+
+
+
 
   def index
   # #works on index page
@@ -90,10 +107,20 @@ class LineItemsController < ApplicationController
     # end
     # puts "========================== PARAMS", params
 
+    if @current_user.present?
 
-    @line_item.update donor_id: @current_user.id
+        @line_item.update donor_id: @current_user.id
 
-    redirect_to drop_path(@line_item.drop_id)
+        redirect_to drop_path(@line_item.drop_id)
+
+    else
+
+      flash[:message] = 'Please sign in to donate'
+
+    end
+
+
+
   end
 
   def destroy

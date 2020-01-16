@@ -63,3 +63,8 @@ div[class^="toggle-product-requests-content"]{
 div[class^="toggle-d-p-requests-content"] {
   display: none;
 }
+
+
+a.feed-anchor {
+  margin-top: 1em;
+}
