@@ -135,12 +135,7 @@ div#homepage-cover {
  border-color:#FFFFFF;
 }
 
-@media all and (max-width:30em){
- a.button5{
-  display:block;
-  margin:0.4em auto;
- }
-}
+
 
 /* toggle sign up form */
 
