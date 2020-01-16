@@ -20,41 +20,43 @@
       <%= link_to 'One', root_path%>
     </div>
 
-      <div id="dropdown-wrapper">
-          <%= link_to 'Drops', drops_path %>
 
-        <div id="dropdown-content">
+          <div id="dropdown-wrapper">
+              <%= link_to 'Drops', drops_path %>
 
-              <%= link_to 'Create Drop', new_drop_path%>
+            <div id="dropdown-content">
 
+                  <%= link_to 'Create Drop', new_drop_path%>
+
+              </div>
           </div>
-      </div>
-    <div id="requested-items">
+        <div id="requested-items">
 
-      <%= link_to 'Requested Items', products_path %>
+          <%= link_to 'Requested Items', products_path %>
 
-    </div>
-
+        </div>
 
 
-<div id="user-links">
-              <% if @current_user.present? %>
 
-                  Welcome, <%= @current_user.name %> |
-                  <%= link_to 'View Profile', user_path(@current_user.id)%> |
-                  <%= link_to 'Logout', login_path, method: 'delete'%>
+    <div id="user-links">
+                  <% if @current_user.present? %>
 
-              <% else %>
+                      Welcome, <%= @current_user.name %> |
+                      <%= link_to 'View Profile', user_path(@current_user.id)%> |
+                      <%= link_to 'Logout', login_path, method: 'delete'%>
 
-                  <%= link_to 'Login', login_path%>
+                  <% else %>
+
+                      <%= link_to 'Login', login_path%>
 
 
-                  <%= link_to 'Sign-up', new_user_path, method: 'get'%>
+                      <%= link_to 'Sign-up', new_user_path, method: 'get'%>
 
-              <% end %>
+                  <% end %>
 
-  </div>
-    </nav>
+        </div>
+
+ </nav>
 </header>
 
 

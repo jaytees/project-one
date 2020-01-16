@@ -1,27 +1,38 @@
 <h2>Profile Page</h2>
-
-<h3>Details</h3>
-  <ul>
-    <li>
-      Name: <%= @user.name %>
-    </li>
-    <li>
-      Email: <%= @user.email %>
-    </li>
-    <li>
-      Location: <%= @user.location %>
-    </li>
-  </ul>
 <hr>
 
-<h3>Your Drops</h3>
-  <%= link_to 'All Drops', drops_path %>
-<br>
-<br>
-  <%=  render :partial => '/drops/feed', :collection => @user.drops, :as => :drop %>
+<div id="user-details">
+    <h3>Details</h3>
+      <ul>
+        <li>
+          <strong>Name:</strong> <%= @user.name %>
+        </li>
+        <li>
+          <strong>Email:</strong> <%= @user.email %>
+        </li>
+        <li>
+          <strong>Location:</strong> <%= @user.location %>
+        </li>
+      </ul>
 
+</div>
+
+
+<h3>Your Drops</h3>
+<hr>
+  <div id="user-drops">
+
+        <%= link_to 'Click to view all drops', drops_path %>
+
+        <%=  render :partial => '/drops/feed', :collection => @user.drops, :as => :drop %>
+
+  </div>
 
 <h3>Create Drop</h3>
-  <%= render :partial => '/drops/form' %>
+<hr>
+
+  <div id="user-create-drop">
+          <%= render :partial => '/drops/form' %>
+  </div>
 
 <hr>
