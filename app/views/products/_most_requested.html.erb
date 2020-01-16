@@ -2,16 +2,17 @@
 
  <!-- @products.each do | product |  -->
 
-  <ul>
-    <li>
-      Type: <%= product.name %>
-      <% if product.line_items.present? %>
-        <ul>
-          <li>
-            Requested on <%= product.line_items.count %> drop(s)
+    <li class="mrequest-item">
 
-          </li>
-        </ul>
+      <%= image_tag 'diaper-svg-transparent.png', alt: 'diaper image', class: 'item-image' %>
+
+      <h3 class="mrequested-title"> <%= product.name %></h3>
+
+      <% if product.line_items.present? %>
+
+      <p class="mrequested-count">
+            Requested on <%= product.line_items.count %> drop(s)
+      </p>
 
           <% total_requested = 0 %>
         <% product.line_items.each do | line | %>
@@ -20,15 +21,12 @@
 
         <% end %>
 
-        <ul>
-          <li>
-            Total Requested: <%= total_requested %>
-          </li>
-        </ul>
+        <p class="mrequested-total">
+              Total Requested: <%= total_requested %>
+        </p>
 
 
       <% end %>
     </li>
-  </ul>
 
 <!-- end -->

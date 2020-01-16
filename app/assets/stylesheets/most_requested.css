@@ -1,0 +1,16 @@
+
+ul#mrequested-items {
+  list-style-type: none;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+li.mrequest-item {
+  display: inline-block;
+  margin: 1em;
+}
+
+img.item-image {
+  color: #f66;
+  max-height: 10em;
+}

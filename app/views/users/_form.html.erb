@@ -15,6 +15,12 @@
             </ul>
             <% end %>
 
+            <% if flash[:message].present? %>
+
+                <p class="flash-message"><%= flash[:message] %></p>
+
+            <% end %>
+
             <%= form_for @user do | f | %>
 
               <%= f.label :name %>

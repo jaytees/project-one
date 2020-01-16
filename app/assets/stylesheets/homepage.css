@@ -2,14 +2,7 @@
 div#welcome-header {
   /* background-color: red; */
   height: 60%;
-
-    /* position: relative;
-
-    z-index: 0; */
-
-    /* text-align: center; */
-
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 div#welcome-header-text {
@@ -163,7 +156,7 @@ h2.drop-feed {
   padding: 1rem;
 }
 
-p.feed-text {
+p.placeholder-text {
 
   padding: 2rem;
 

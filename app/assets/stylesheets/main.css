@@ -91,7 +91,7 @@ div#user-links {
 #content-container {
   z-index: 2;
   margin: 2em auto;
-  width: 70vw;
+  max-width: 70vw;
   display: grid;
   background-color: #f1f5f2;
   border-radius: 1em;
@@ -138,4 +138,10 @@ h2 {
   z-index: 1;
   width: 10em;
   padding: 1em 0 1em 0;
+}
+
+
+
+.flash-message{
+  color: red;
 }

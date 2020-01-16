@@ -1,9 +1,9 @@
-<h2>Products Index</h2>
-
-<h3>Most Requested Items</h3>
-
-  <%= render :partial => 'most_requested', :collection => @products, :as => :product %>
-
+<h2>Most Requested Items</h2>
 <hr>
 
-<h3>All Items</h3>
+  <p class="placeholder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in. </p>
+
+  <ul id="mrequested-items">
+    <%= render :partial => 'most_requested', :collection => @products, :as => :product %>
+  </ul>
+<hr>
