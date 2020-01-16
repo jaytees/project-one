@@ -13,10 +13,42 @@
              <div id="toggle-signup-form">
 
                   <!-- <p>form</p> -->
-                  <%= render :partial => '/users/form' %>
+                  <%# render :partial => '/users/form' %>
 
-              </div >
 
+      <div id="signup-form-homepage">
+            <h2 id="signup-header-homepage">Sign Up</h2>
+
+                  <%= form_for @user do | f | %>
+
+                      <%= f.label :name %>
+                      <%= f.text_field :name %>
+
+
+                    <br>
+
+                            <%= f.label :email %>
+                            <%= f.email_field :email %>
+
+                    <br>
+                            <%= f.label :location %>
+                            <%= f.text_field :location %>
+
+                    <br>
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
+
+                    <br>
+                      <%= f.label :password_confirmation, 'Confirm Password' %>
+                      <%= f.password_field :password_confirmation %>
+                  <br>
+
+
+                <%= f.submit class: 'signup-submit-button'%>
+
+                <% end %>
+              </div>
+          </div> <!-- form toggle -->
       </div>
     </div>
 </div>
