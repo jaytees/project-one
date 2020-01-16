@@ -26,6 +26,7 @@ class DropsController < ApplicationController
 
   def index
     @drops = Drop.all
+    @drop = Drop.new
     @line_item_new = LineItem.new
 
 
