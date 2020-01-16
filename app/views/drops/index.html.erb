@@ -1,5 +1,5 @@
 <h2 class="create-a-drop">Create a Drop</h2>
-
+<hr>
   <div id="create-new-drop-container">
 
     <!-- renders with loop -->
@@ -8,13 +8,27 @@
 
 </div>
 
+<br>
+<h2>Your Closest Collections</h2>
+<hr>
+
+  <% if @current_user.present? %>
+    <p class="placeholder-text">The collections available to you within a 10km radius are below</p>
+
+    <%= render :partial => 'map' %>
+  <% else %>
+
+      <p class="placeholder-text">Please login or sign up to find your closest collections</p>
+
+  <% end %>
 
 
 
+<br>
 <h2 class="drop-feed">Drop feed</h2>
 <hr>
   <p class="placeholder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in. </p>
-  
+
 <!-- sorted by date by default in controller-->
 <!-- by delivery or collection location -->
 

@@ -2,15 +2,15 @@ User.destroy_all
 
 puts "Creating users"
 
-  u1 = User.create! name: 'Jordan Trickett', email: 'j@t.com', location: 'Bondi', password: 'chicken'
+  u1 = User.create! name: 'Jordan Trickett', email: 'j@t.com', location: 'Bondi Beach', password: 'chicken'
 
-  u2 = User.create! name: 'Gemma Carmichael', email: 'g@c.com', location: 'Bondi', password: 'chicken'
+  u2 = User.create! name: 'Gemma Carmichael', email: 'g@c.com', location: 'Manly', password: 'chicken'
 
-  u3 = User.create! name: 'Tom Psycs', email: 't@p.com', location: 'Fitzroy', password: 'chicken'
+  u3 = User.create! name: 'Tom Psycs', email: 't@p.com', location: 'Melbourne, Vic', password: 'chicken'
 
-  u4 = User.create! name: 'Aimee Wooton', email: 'e@w.com', location: 'Balaclava', password: 'chicken'
+  u4 = User.create! name: 'Aimee Wooton', email: 'e@w.com', location: 'Geelong, Vic', password: 'chicken'
 
-  u5 = User.create! name: 'Dave Dave', email: 'd@d.com', location: 'Bowser', password: 'chicken'
+  u5 = User.create! name: 'Dave Dave', email: 'd@d.com', location: 'Canberra, NSW', password: 'chicken'
 
   u6 = User.create! name: 'Grace Grace', email: 'g@g.com', location: 'Penrose', password: 'chicken'
 

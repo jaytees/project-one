@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+
+
   before_action :check_if_logged_in, only: [:show, :edit, :update, :destroy]
 
 
@@ -54,5 +56,7 @@ class UsersController < ApplicationController
     params.required(:user).permit(:name, :email, :location, :password, :password_confirmation)
 
   end
+
+
 
 end

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-
+  geocoded_by :location
 
   has_many :drops, :foreign_key => 'owner_id'
 
@@ -15,5 +15,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates_presence_of :name, :location
 
-  
+  after_validation :geocode
+
 end

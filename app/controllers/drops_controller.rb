@@ -77,21 +77,27 @@ class DropsController < ApplicationController
 
   end
 
+
   def index
     @drops = Drop.all
     @drop = Drop.new
     @line_item_new = LineItem.new
 
 
+    @local_collections = Drop.near([@current_user.latitude, @current_user.longitude], 10, unit: :km)
+
+
   end
+
+
 
   def show
     #shows Individual drop
 
-    # raise 'hell'
-
     @drop = Drop.find params[:id]
+
     @line_item_new = LineItem.new
+
 
 
 
