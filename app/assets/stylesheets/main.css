@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
 
 * {
   /* border: 0.5px solid grey; */
@@ -42,13 +42,13 @@ a {
 
 header {
     background-color: #f8883a;
-    height: 5em;
+    height: 6em;
     border-radius: 0 0 1em 1em;
 }
 
 nav {
   color: white;
-  font-weight: 400;
+  font-weight: 700;
   text-decoration: none;
   color: inherit;
   letter-spacing: 0.2em;
@@ -81,10 +81,9 @@ div#user-links {
   padding-right: 2em
 }
 
-#homepage-logo a {
-  font-size: 4em;
-  letter-spacing: normal;
-  font-weight: 800;
+#homepage-logo img {
+  height: 5em;
+  padding-top: 0.5em;
 }
 
 
@@ -100,7 +99,7 @@ div#user-links {
 }
 
 
-div#nav-links:hover {
+nav a:hover {
   background-color: #ff6900;
 }
 
