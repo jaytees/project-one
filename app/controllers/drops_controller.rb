@@ -10,9 +10,11 @@ class DropsController < ApplicationController
 
   def create
 
+    # raise 'hell'
     if @current_user.present?
 
-        params[:owner_id] = @current_user.id
+        # params[:owner_id] = @current_user.id
+
         @drop = Drop.create drop_params
 
         if @drop.persisted?
@@ -85,8 +87,13 @@ class DropsController < ApplicationController
 
   def show
     #shows Individual drop
+
+    # raise 'hell'
+
     @drop = Drop.find params[:id]
     @line_item_new = LineItem.new
+
+
 
   end
 

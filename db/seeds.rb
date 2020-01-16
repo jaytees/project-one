@@ -30,7 +30,7 @@ puts "Creating Drops"
 
   d1 = Drop.create! collection_date: '17/01/2020',  collection_location: 'Bondi', delivery_date: '21/01/2020', delivery_location: 'Penrose', owner: u1
 
-  d2 = Drop.create! collection_date: '14/01/2020',  collection_location: 'Fitzroy', delivery_date: '18/01/2020', delivery_location: 'Bowser', owner: u4
+  d2 = Drop.create! collection_date: '14/01/2020',  collection_location: 'Manly', delivery_date: '18/01/2020', delivery_location: 'Bowser', owner: u4
 
 puts "Created #{Drop.count} drops"
 

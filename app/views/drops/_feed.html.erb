@@ -2,7 +2,7 @@
   <div id="calendar">
     <div id="calendar-bar">
     </div>
-      <h4 id="collection-date-display"><%= drop.collection_date %></h4>
+      <h4 id="collection-date-display"><%= drop.collection_date.to_s.slice(0..4)%></h4>
   </div>
 <div id="drop-feed-item-content">
     <div id="collection-details-container">

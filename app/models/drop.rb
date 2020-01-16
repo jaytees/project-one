@@ -1,5 +1,7 @@
 class Drop < ApplicationRecord
 
+  geocoded_by :collection_location
+
 #sorts drops by earliest date by default
   default_scope { order(collection_date: :asc) }
 
@@ -9,5 +11,7 @@ class Drop < ApplicationRecord
 
 #better way with loop
   validates_presence_of :owner_id, :collection_location, :collection_date, :delivery_location, :delivery_date
+
+  after_validation :geocode
 
 end

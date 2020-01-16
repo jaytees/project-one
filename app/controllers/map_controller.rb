@@ -1,5 +1,7 @@
 class MapController < ApplicationController
-  def test
-    @users = User.all.select(:name, :latitude, :longitude)
+  def map
+
+    #find aswell owner in here
+    @drops = Drop.all.select(:latitude, :longitude)
   end
 end
