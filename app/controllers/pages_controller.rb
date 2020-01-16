@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @drops = Drop.all
     #donate or request for each drop
     @line_item_new = LineItem.new
+
+    #most requested products
+    @products = Product.all
   end
 
 end

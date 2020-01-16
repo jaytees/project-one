@@ -93,6 +93,21 @@
         <%= link_to 'Click to View all Drops', drops_path %>
 
       </div>
+
+    <div id="mr-container-hp">
+        <h2>Most Requested Items</h2>
+        <hr>
+
+          <p class="placeholder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in. </p>
+
+          <ul id="mrequested-items">
+            <%= render :partial => 'products/most_requested', :collection => @products.limit(4), :as => :product %>
+          </ul>
+
+        <%= link_to 'Click to View all Request Information', drops_path %>
+
+    </div>
+
     </div>
 
 </div>
