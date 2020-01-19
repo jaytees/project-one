@@ -49,16 +49,16 @@ http://jaytees-one.herokuapp.com/drops
 
 * Landing Page
 
-![landing page image](images/screenshot-1.png)
+![landing page image](app/assets/images/screenshot-1.png)
 
 * Drop Feed
 
-![landing page image](images/screenshot-2.png)
+![landing page image](app/assets/images/screenshot-2.png)
 
 * Map Example
 
-![landing page image](images/screenshot-3.png)
+![landing page image](app/assets/images/screenshot-3.png)
 
 * Drop Feed
 
-![landing page image](images/screenshot-4.png)
+![landing page image](app/assets/images/screenshot-4.png)
