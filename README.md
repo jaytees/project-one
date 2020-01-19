@@ -6,14 +6,59 @@ There is a big issue surrounding the Australian bushfire support. People are don
 
 ## Aim of the site
 
-* Doners will know what products are most in demand
-* Doners will know when to buy goods
+* Donors will know what products are most in demand
+* Donors will know when to buy goods
   * When / where collections are orgainised
   * When / where they are being delivered
-* Doners know what locations are highest in demand
-* Doners know products other people are donation so don't over buy
+* Donors know what locations are highest in demand
+* Donors know products other people are donation so don't over buy
 
 ## Style
 
 * Bright / cheerful
 * Soft around the edges
+
+## Tech / Framework Used
+
+* Ruby
+* Ruby on Rails
+* Jquery
+* CSS
+* Geocoder / Google Maps API
+* Heroku
+
+## Things to do
+
+* CSS still needs work, specifically forms and nav bar
+* Mobile responsiveness needs to integrated
+* Add more interactivity
+* Search facility by location
+* Email verification
+
+## Known bugs
+
+* Mobile responsiveness is terrible
+* When donations are made, check to see if any product requests exist without donors assigned
+
+## Link to Live Site
+
+http://jaytees-one.herokuapp.com/drops
+
+
+## Screenshots
+
+* Landing Page
+
+![landing page image](/images/screenshot-1)
+
+* Drop Feed
+
+![landing page image](/images/screenshot-2)
+
+* Map Example
+
+![landing page image](/images/screenshot-3)
+
+* Drop Feed
+
+![landing page image](/images/screenshot-4)
