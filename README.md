@@ -42,7 +42,7 @@ There is a big issue surrounding the Australian bushfire support. People are don
 
 ## Link to Live Site
 
-http://jaytees-one.herokuapp.com/drops
+http://jaytees-one.herokuapp.com/
 
 
 ## Screenshots
