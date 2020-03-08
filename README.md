@@ -55,10 +55,14 @@ http://jaytees-one.herokuapp.com
 
 ![landing page image](app/assets/images/screenshot-2.png)
 
+* Commit to requested products by drop
+
+![landing page image](app/assets/images/screenshot-4.png)
+
+* Donate or request products by drop
+
+![landing page image](app/assets/images/screenshot-5.png)
+
 * Map Example
 
 ![landing page image](app/assets/images/screenshot-3.png)
-
-* Drop Feed
-
-![landing page image](app/assets/images/screenshot-4.png)
