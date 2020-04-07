@@ -59,17 +59,31 @@ http://jaytees-one.herokuapp.com
 
 - Model Associations - Although already mentioned above in the wins section this was one of my biggest hurdles. The complexity was that products needed to be present on multiple drops at any given moment and each instance needed to allow a user to be either a donor or recipient. To tackle this I had to break the problem into two. I had the product and drop association and the user type association.
 
-Upon research I found the line item shopping basket concept best suited my situation for product and drop association. Being that a drop was essentially a users shopping basket, as multiple shopping baskets could contain different instances of the same product. So this would structure would facilitate the join I required.
+  Upon research I found the line item shopping basket concept best suited my situation for product and drop association. Being that a drop was essentially a users shopping basket, as multiple shopping baskets could contain different instances of the same product. So this would structure would facilitate the join I required.
 
-To achieve the user association took a lot of digging into the Active Record Rails documentation, until I finally came across foreign keys. Once I understood that a table could be referenced under an alias or multiple, I realised a user whether a recipient or donor was same it was just saved respective to its function in that instance.
+  To achieve the user association took a lot of digging into the Active Record Rails documentation, until I finally came across foreign keys. Once I understood that a table could be referenced under an alias or multiple, I realised a user whether a recipient or donor was same it was just saved respective to its function in that instance.
 
 - Home Page Conditional Rendering - I dreamt up an idea for the home page which required a different page structure to the rest of the site. For the homepage I needed a full viewport width background and the rest of the site is rendered within a div container with a fixed 70% viewport width. To achieve my goal I had to learn about conditional rendering and combine this with the partial rendering I had already learnt. I also found the built in controller_name and action_name variables. With these I was able to evaluate which controller and action was handling the view and based on this define which view to yield.
 
 ## Code
 
-- Associations
-- Partial from rendering - drop feed display
+- Line item user associations
+  ![line item user association](app/assets/images/line-item-user-keys.png)
+  ![line item user association](app/assets/images/line-item-user-keys2.png)
+
+- Partial form rendering - drop feed display
+
+  - Render the partial for drop feed
+    ![partial render feed](app/assets/images/partial-render-feed2.png)
+  - Display the products that have already been requested for this drop
+    ![partial render requested products](app/assets/images/partial-render-feed3.png)
+    ![partial render requested products](app/assets/images/partial-render-feed7.png)
+  - Allow a user to be able to donate and request products for this drop
+    ![partial render request or donate](app/assets/images/partial-render-feed4.png)
+    ![partial render all products request or donate](app/assets/images/partial-render-feed6.png)
+
 - Home Page - using built in controller name and action name
+  ![conditional render for homepage](app/assets/images/homepage-conditional-rendering.png)
 
 ## Screenshots
 
