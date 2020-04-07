@@ -2,7 +2,7 @@
 
 ## Purpose of the site
 
-There is a big issue surrounding the Australian bushfire support. People are donating locally, to community centres and clubs. But they are struggling to handle the volume and organising where the donations are actually going. I hope to make this easier by building an application where users can request or donate items based on collections created by other users.
+There is a big issue surrounding the Australian bushfire support. People are donating locally, to community centres and clubs. But they are struggling to handle the volume and organising where the donations are actually going. I hope to make this easier by building an application where users can request or donate items based on collections/deliveries created by other users.
 
 ## Aim of the site
 
@@ -51,27 +51,31 @@ http://jaytees-one.herokuapp.com
 
 ## Wins
 
-- Partial Rendering - Perhaps the achievement I am most proud of is my use of partial view rendering to create an almost component based SPA interface. I have since learnt I was pushing the functionality of partial rendering in the direction that framework's like React and Vue were designed to build. Through using this functionality I was able to have elements/forms that were controlled by different controllers all grouped in one 'parent element'. Main example would be the drop feed display and how it is dependent on 2 different line item forms rendered within it. There were obviously some drawbacks from the lack of a virtual DOM to re-draw elements that were updated. But this is just the way I envisioned my app to function and I'm really happy with how close I managed to get it.
-- Model Associations - Duality for user and product models. By using 3 foreign keys, I achieved diverse functionality from one user table. Allowing a user to be either the organiser of a drop, the donor of a product or the requester of a product. This solved the issue of having to create multiple User tables for a donor and recipient and allowed me to have multiple users linked to drops.
-- Maps and Conditional Rendering - The Google Maps API and Geocoder obviously made this functionality more accessible but I'm really happy with with the results I managed to achieve with some customisation. One map will show the user's location and the location of the selected collection. The other map will show the user's location and collections within a 10km radius. Which map is rendered is based on the evaluation of the built in controller_name and action_name variables in a conditional.
+- **Partial Rendering** - Perhaps the achievement I am most proud of is my use of partial view rendering to create an almost component based SPA interface. I have since learnt I was pushing the functionality of partial rendering in the direction that framework's like React and Vue were designed to build. Through using this functionality I was able to have elements/forms that were controlled by different controllers all grouped in one 'parent element'. Main example would be the drop feed display and how it is dependent on 2 different line item forms rendered within it. There were obviously some drawbacks from the lack of a virtual DOM to re-draw elements that were updated. But this is just the way I envisioned my app to function and I'm really happy with how close I managed to get it.
+- **Model Associations** - Duality for user and product models. By using 3 foreign keys, I achieved diverse functionality from one user table. Allowing a user to be either the organiser of a drop, the donor of a product or the requester of a product. This solved the issue of having to create multiple User tables for a donor and recipient and allowed me to have multiple users linked to drops.
+- **Maps and Conditional Rendering** - The Google Maps API and Geocoder obviously made this functionality more accessible but I'm really happy with with the results I managed to achieve with some customisation. One map will show the user's location and the location of the selected collection. The other map will show the user's location and collections within a 10km radius. Which map is rendered is based on the evaluation of the built in controller_name and action_name variables in a conditional.
 
 ## Challenges
 
-- Model Associations - Although already mentioned above in the wins section this was one of my biggest hurdles. The complexity was that products needed to be present on multiple drops at any given moment and each instance needed to allow a user to be either a donor or recipient. To tackle this I had to break the problem into two. I had the product and drop association and the user type association.
+- **Model Associations** - Although already mentioned above in the wins section this was one of my biggest hurdles. The complexity was that products needed to be present on multiple drops at any given moment and each instance needed to allow a user to be either a donor or recipient. To tackle this I had to break the problem into two. I had the product and drop association and the user type association.
 
   Upon research I found the line item shopping basket concept best suited my situation for product and drop association. Being that a drop was essentially a users shopping basket, as multiple shopping baskets could contain different instances of the same product. So this would structure would facilitate the join I required.
 
   To achieve the user association took a lot of digging into the Active Record Rails documentation, until I finally came across foreign keys. Once I understood that a table could be referenced under an alias or multiple, I realised a user whether a recipient or donor was same it was just saved respective to its function in that instance.
 
-- Home Page Conditional Rendering - I dreamt up an idea for the home page which required a different page structure to the rest of the site. For the homepage I needed a full viewport width background and the rest of the site is rendered within a div container with a fixed 70% viewport width. To achieve my goal I had to learn about conditional rendering and combine this with the partial rendering I had already learnt. I also found the built in controller_name and action_name variables. With these I was able to evaluate which controller and action was handling the view and based on this define which view to yield.
+- **Conditional Rendering** - I dreamt up an idea for the home page which required a different page structure to the rest of the site. For the homepage I needed a full viewport width background and the rest of the site is rendered within a div container with a fixed 70% viewport width. To achieve my goal I had to learn about conditional rendering and combine this with the partial rendering I had already learnt. I also found the built in controller_name and action_name variables. With these I was able to evaluate which controller and action was handling the view and based on this define which view to yield.
 
 ## Code
 
-- Line item user associations
+#### User Associations
+
+- Line item foreign keys
   ![line item user association](app/assets/images/line-item-user-keys.png)
   ![line item user association](app/assets/images/line-item-user-keys2.png)
 
-- Partial form rendering - drop feed display
+#### Partial Form Rendering
+
+- Drop feed display
 
   - Render the partial for drop feed
     ![partial render feed](app/assets/images/partial-render-feed2.png)
@@ -82,7 +86,9 @@ http://jaytees-one.herokuapp.com
     ![partial render request or donate](app/assets/images/partial-render-feed4.png)
     ![partial render all products request or donate](app/assets/images/partial-render-feed6.png)
 
-- Home Page - using built in controller name and action name
+#### Home Page Conditional Rendering
+
+- Using built in controller name and action name
   ![conditional render for homepage](app/assets/images/homepage-conditional-rendering.png)
 
 ## Screenshots
