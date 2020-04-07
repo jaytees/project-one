@@ -72,7 +72,9 @@ http://jaytees-one.herokuapp.com
 #### User Associations
 
 - Line item foreign keys
+
   ![line item user association](app/assets/images/line-item-user-keys.png)
+
   ![line item user association](app/assets/images/line-item-user-keys2.png)
 
 #### Partial Form Rendering
@@ -80,17 +82,25 @@ http://jaytees-one.herokuapp.com
 - Drop feed display
 
   - Render the partial for drop feed
+
     ![partial render feed](app/assets/images/partial-render-feed2.png)
+
   - Display the products that have already been requested for this drop
+
     ![partial render requested products](app/assets/images/partial-render-feed3.png)
+
     ![partial render requested products](app/assets/images/partial-render-feed7.png)
+
   - Allow a user to be able to donate and request products for this drop
+
     ![partial render request or donate](app/assets/images/partial-render-feed4.png)
+
     ![partial render all products request or donate](app/assets/images/partial-render-feed6.png)
 
 #### Home Page Conditional Rendering
 
 - Using built in controller name and action name
+
   ![conditional render for homepage](app/assets/images/homepage-conditional-rendering.png)
 
 ## Screenshots
