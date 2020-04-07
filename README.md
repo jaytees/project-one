@@ -52,7 +52,9 @@ http://jaytees-one.herokuapp.com
 ## Wins
 
 - **Partial Rendering** - Perhaps the achievement I am most proud of is my use of partial view rendering to create an almost component based SPA interface. I have since learnt I was pushing the functionality of partial rendering in the direction that framework's like React and Vue were designed to build. Through using this functionality I was able to have elements/forms that were controlled by different controllers all grouped in one 'parent element'. Main example would be the drop feed display and how it is dependent on 2 different line item forms rendered within it. There were obviously some drawbacks from the lack of a virtual DOM to re-draw elements that were updated. But this is just the way I envisioned my app to function and I'm really happy with how close I managed to get it.
+
 - **Model Associations** - Duality for user and product models. By using 3 foreign keys, I achieved diverse functionality from one user table. Allowing a user to be either the organiser of a drop, the donor of a product or the requester of a product. This solved the issue of having to create multiple User tables for a donor and recipient and allowed me to have multiple users linked to drops.
+
 - **Maps and Conditional Rendering** - The Google Maps API and Geocoder obviously made this functionality more accessible but I'm really happy with with the results I managed to achieve with some customisation. One map will show the user's location and the location of the selected collection. The other map will show the user's location and collections within a 10km radius. Which map is rendered is based on the evaluation of the built in controller_name and action_name variables in a conditional.
 
 ## Challenges
