@@ -16,8 +16,6 @@
 
 $(document).ready(function() {
 
-// gotta be easier way but :visible not working
-
 // homepage sign up
 
   $("#toggle-signup-button").click(function() {
@@ -34,11 +32,8 @@ $(document).ready(function() {
 
     const dropId = $(this).data('drop-id');
 
-    // console.log(`.toggle-product-requests-content${dropId}`);
 
     $(`.toggle-product-requests-content${dropId}`).toggle(
-
-      // function(){$(".toggle-product-requests-button").css({"color": "white"});},
 
 
     ); //toggle
@@ -50,8 +45,6 @@ $(document).ready(function() {
   $(".toggle-d-p-requests-button").click(function() {
 
     const dropId = $(this).data('drop-id');
-
-    // console.log(`.toggle-product-requests-content${dropId}`);
 
     $(`.toggle-d-p-requests-content${dropId}`).toggle();
 

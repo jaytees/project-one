@@ -53,7 +53,7 @@
             });//collection marker
           } //for loop
 
-            var userString = '<h4> THIS IS YOU! <h4>'
+            var userString = '<h4> This is you! <h4>'
 
             var userInfowindow = new google.maps.InfoWindow({
                 content: userString,
@@ -117,7 +117,7 @@
 
 
 
-            var userString = '<h4> THIS IS YOU! <h4>'
+            var userString = '<h4> This is you! <h4>'
 
             var userInfowindow = new google.maps.InfoWindow({
                 content: userString,
@@ -151,7 +151,8 @@
 
 
             bounds.extend( userMarker.position );
-            bounds.extend( collectionMarker.position ); //extends bounding box to include new position on every iteration
+            // extends bounding box to include new position on every iteration
+            bounds.extend( collectionMarker.position );
 
             map.fitBounds( bounds );
 

@@ -10,10 +10,9 @@ class DropsController < ApplicationController
 
   def create
 
-    # raise 'hell'
+
     if @current_user.present?
 
-        # params[:owner_id] = @current_user.id
 
         @drop = Drop.create drop_params
 
@@ -37,42 +36,6 @@ class DropsController < ApplicationController
 
 
     end #current user present?
-
-
-
-
-
-
-
-
-
-    # params[:owner_id] = @current_user.id
-
-
-  #end checks no-one is hacking
-    # if @drop.persisted? #&& @drop.owner == @current_user.id
-    #
-    #     if @current_user.present?
-    #
-    #
-    #       flash[:message] = 'Drop successfully created'
-    #
-    #       redirect_to user_path(params[:drop][:owner_id])
-    #       # render :new
-    #     else
-    #
-    #       # stop error redirecting from page, has to do with below
-    #       render :new
-    #
-    #     end #nested if
-    #
-    #   else
-    #
-    #     flash[:message] = 'Please sign-up to create a drop'
-    #
-    #     redirect_to new_user_path
-    #
-    # end  #if persisted
 
 
   end
