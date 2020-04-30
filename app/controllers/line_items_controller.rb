@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
   end
 
   def create
-
+    raise 'hell'
 
     if @current_user.present?
 

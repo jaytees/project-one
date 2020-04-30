@@ -7,7 +7,8 @@
 <% Product.all.each do | pr | %>
   <ul>
     <li>
-      <%= form_for @line_item_new do |f| %>
+
+      <%= form_for @line_item_new, namespace: "#{drop_id}-#{pr.id}", :html => {:class => 'line-item-form'} do |f| %>
 
         <%= f.hidden_field :drop_id, :value => drop_id %>
         <%= f.hidden_field :product_id, :value => pr.id %>
@@ -15,9 +16,9 @@
         <strong><%= pr.name %></strong>
         <br>
 
-          <%= radio_button_tag(:user, 'request') %>
+          <%= radio_button_tag(:user, 'request', false, :id => "request-drop#{drop_id}-product#{pr.id}") %>
           <%= f.label("Request") %>
-          <%= radio_button_tag(:user, 'donate') %>
+          <%= radio_button_tag(:user, "donate", false, :id => "donate-drop#{drop_id}-product#{pr.id}") %>
           <%= f.label("Donate") %>
 
           <% f.label :quantity %>

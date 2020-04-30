@@ -1,7 +1,7 @@
-#drop-feed-item {
+.drop-feed-item {
   height: auto;
   width: auto;
-  background-color: #FF9800;
+  background-color: #ff9800;
   padding: 1em;
   margin: 1em;
   box-sizing: border-box;
@@ -10,38 +10,36 @@
   justify-content: flex-start;
 }
 
-#calendar {
+.calendar {
   height: 7.5em;
   width: 8.5em;
   background-color: white;
   border-radius: 1em;
   align-self: center;
-  margin:0.5em 1.5em;
+  margin: 0.5em 1.5em;
   border-bottom: double;
   box-shadow: -0.2em 0.2em 0px 1px #00000026;
 }
 
-#calendar-bar {
+.calendar-bar {
   width: 8.5em;
   height: 2em;
   background: red;
   border-radius: 1em 1em 0 0;
 }
 
-#collection-date-display {
+.collection-date-display {
   text-align: center;
   margin: 1.5em auto;
 }
 
-
-#drop-feed-item-content {
-    margin: 0.5em 3em;
-    display: flex;
-    flex-direction: column;
+.drop-feed-item-content {
+  margin: 0.5em 3em;
+  display: flex;
+  flex-direction: column;
 }
 
-
-#collection-details-container {
+.collection-details-container {
   display: flex;
 }
 
@@ -54,16 +52,13 @@ div.toggle-product-requests-button {
   padding: 1em 0 1em 0;
 }
 
-
-div[class^="toggle-product-requests-content"]{
-    display: none;
-
-}
-
-div[class^="toggle-d-p-requests-content"] {
+div[class^='toggle-product-requests-content'] {
   display: none;
 }
 
+div[class^='toggle-d-p-requests-content'] {
+  display: none;
+}
 
 a.feed-anchor {
   margin-top: 1em;
