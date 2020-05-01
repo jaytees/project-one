@@ -15,41 +15,25 @@
 //= require jquery
 
 $(document).ready(function() {
+  // homepage sign up
 
-// homepage sign up
-
-  $("#toggle-signup-button").click(function() {
-
-      $("#toggle-signup-form").toggle()
-
+  $('#toggle-signup-button').click(function() {
+    $('#toggle-signup-form').toggle();
   });
 
+  // drop feed toggle
+  //  product request for drop
 
-// drop feed toggle
-//  product request for drop
-
-  $(".toggle-product-requests-button").click(function() {
-
+  $('.drop-feed-item__product-requests-toggle').click(function() {
     const dropId = $(this).data('drop-id');
 
-
-    $(`.toggle-product-requests-content${dropId}`).toggle(
-
-
-    ); //toggle
-
-
+    $(`.drop-feed-item__product-requests-content${dropId}`).toggle(); //toggle
   });
 
-// drop and product requests
-  $(".toggle-d-p-requests-button").click(function() {
-
+  // drop and product requests
+  $('.drop-feed-item__donate-requests-toggle').click(function() {
     const dropId = $(this).data('drop-id');
 
-    $(`.toggle-d-p-requests-content${dropId}`).toggle();
-
-
+    $(`.drop-feed-item__donate-requests-content${dropId}`).toggle();
   });
-
-
-});  //document ready
+}); //document ready

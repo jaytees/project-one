@@ -1,11 +1,11 @@
 <div class="drop-feed-item">
   <div class="calendar">
-    <div class="calendar-bar">
+    <div class="calendar__bar">
     </div>
-      <h4 class="collection-date-display"><%= drop.collection_date.to_s.slice(0..4)%></h4>
+      <h4 class="calendar__date"><%= drop.collection_date.to_s.slice(0..4)%></h4>
   </div>
 
-  <div class="drop-feed-item__content">
+  <div class="drop-feed-item__content-container">
     <div class="drop-feed-item__collection-info-container">
           <!-- <ul>
             <li> -->
@@ -28,10 +28,10 @@
           </ul> -->
     </div>
 
-  <div class="toggle-product-requests-button" data-drop-id="<%= drop.id %>">
+  <div class="drop-feed-item__product-requests-toggle" data-drop-id="<%= drop.id %>">
         <h4>Click to View Product Requests for This Drop</h4>
     </div>
-    <div class="toggle-product-requests-content<%= drop.id %>">
+    <div class="drop-feed-item__product-requests-content<%= drop.id %>">
 
       <% if flash[:message].present? %>
         <p><%= flash[:message] %></p>
@@ -47,16 +47,16 @@
     </div>
 
 
-    <div class="toggle-d-p-requests-button" data-drop-id="<%= drop.id %>">
+    <div class="drop-feed-item__donate-requests-toggle" data-drop-id="<%= drop.id %>">
         <h4>Click to Donate or Request Products</h4>
     </div>
-    <div class="toggle-d-p-requests-content<%= drop.id %>">
+    <div class="drop-feed-item__donate-requests-content<%= drop.id %>">
 
           <%= render partial: 'line_items/form', locals: {drop_id: drop.id} %>
 
     </div>
 
-    <%= link_to 'Click to View full details', drop_path(drop.id), class: 'feed-anchor'%>
+    <%= link_to 'Click to View full details', drop_path(drop.id), class: 'drop-feed-item__link'%>
 
   </div> <!-- drop feed item content -->
 

@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-start;
 
-  &__content {
+  &__content-container {
     margin: 0.5em 3em;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,28 @@
     margin: 0.5em;
     color: white;
   }
+
+  &__product-requests-toggle {
+    padding: 1em 0 1em 0;
+    cursor: pointer;
+  }
+
+  &__donate-requests-toggle {
+    padding: 1em 0 1em 0;
+    cursor: pointer;
+  }
+
+  div[class^='drop-feed-item__product-requests-content'] {
+    display: none;
+  }
+
+  div[class^='drop-feed-item__donate-requests-content'] {
+    display: none;
+  }
+
+  &__link {
+    margin-top: 1em;
+  }
 }
 
 .calendar {
@@ -34,32 +56,16 @@
   margin: 0.5em 1.5em;
   border-bottom: double;
   box-shadow: -0.2em 0.2em 0px 1px #00000026;
-}
 
-.calendar-bar {
-  width: 8.5em;
-  height: 2em;
-  background: red;
-  border-radius: 1em 1em 0 0;
-}
+  &__bar {
+    width: 8.5em;
+    height: 2em;
+    background: red;
+    border-radius: 1em 1em 0 0;
+  }
 
-.collection-date-display {
-  text-align: center;
-  margin: 1.5em auto;
-}
-
-div.toggle-product-requests-button {
-  padding: 1em 0 1em 0;
-}
-
-div[class^='toggle-product-requests-content'] {
-  display: none;
-}
-
-div[class^='toggle-d-p-requests-content'] {
-  display: none;
-}
-
-a.feed-anchor {
-  margin-top: 1em;
+  &__date {
+    text-align: center;
+    margin: 1.5em auto;
+  }
 }
